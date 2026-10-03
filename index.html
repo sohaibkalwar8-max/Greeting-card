@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#100b20">
+    <meta name="description" content="A beautiful interactive greeting card made with HTML, CSS and JavaScript.">
+
+    <title>A Special Greeting For You</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+    <div class="stars" id="stars"></div>
+
+    <header class="topbar">
+        <a href="#" class="brand">little<span>moments</span><b>.</b></a>
+        <span class="top-label">A PERSONAL GREETING</span>
+    </header>
+
+    <main class="main-container">
+
+        <section class="intro">
+            <div class="eyebrow">
+                <span class="status-dot"></span>
+                MADE WITH CARE
+            </div>
+
+            <h1>A little something<br>
+                <span>just for you.</span>
+            </h1>
+
+            <p class="intro-text">
+                Some feelings are better shared in a card.
+                This one was made especially for you.
+            </p>
+        </section>
+
+        <!-- Interactive Envelope -->
+        <section class="card-stage" aria-label="Interactive greeting card">
+
+            <div class="envelope-scene" id="envelopeScene">
+
+                <div class="envelope-shadow"></div>
+
+                <div class="envelope">
+
+                    <div class="envelope-back"></div>
+
+                    <div class="letter" id="letter">
+                        <div class="letter-inner">
+
+                            <div class="letter-decoration">✦ &nbsp; ✧ &nbsp; ✦</div>
+
+                            <p class="letter-small">A LITTLE NOTE FOR</p>
+
+                            <h2 id="letterName">Someone Special</h2>
+
+                            <div class="letter-divider">
+                                <span></span>
+                                <b>♥</b>
+                                <span></span>
+                            </div>
+
+                            <p class="letter-message" id="letterMessage">
+                                May your days be filled with little joys,
+                                beautiful memories, and people who make
+                                your heart feel at home.
+                            </p>
+
+                            <p class="letter-closing">With warm wishes,</p>
+                            <p class="letter-sender" id="letterSender">Someone who cares</p>
+
+                            <div class="letter-bottom">MADE JUST FOR YOU</div>
+                        </div>
+                    </div>
+
+                    <div class="envelope-front"></div>
+
+                    <div class="envelope-flap" id="envelopeFlap"></div>
+
+                    <button
+                        class="seal"
+                        id="openCard"
+                        aria-label="Open greeting card"
+                        aria-expanded="false"
+                    >
+                        <span>♥</span>
+                    </button>
+
+                </div>
+            </div>
+
+            <p class="interaction-hint" id="interactionHint">
+                <span>↗</span> Tap the heart to open your card
+            </p>
+
+            <div class="card-controls">
+                <button class="control-btn primary-control" id="openBtn">
+                    Open Your Card <span>↗</span>
+                </button>
+
+                <button class="control-btn secondary-control" id="resetBtn">
+                    Start Again ↺
+                </button>
+            </div>
+
+        </section>
+
+        <!-- Personalization -->
+        <section class="personalize">
+            <div class="section-title">
+                <span class="section-number">01</span>
+                <div>
+                    <h2>Make it personal</h2>
+                    <p>Change the message and make it yours.</p>
+                </div>
+            </div>
+
+            <div class="form-grid">
+
+                <label class="field">
+                    <span>RECIPIENT NAME</span>
+                    <input
+                        type="text"
+                        id="recipientInput"
+                        maxlength="35"
+                        placeholder="e.g. Alex"
+                    >
+                </label>
+
+                <label class="field">
+                    <span>YOUR NAME</span>
+                    <input
+                        type="text"
+                        id="senderInput"
+                        maxlength="35"
+                        placeholder="e.g. Sohaib"
+                    >
+                </label>
+
+                <label class="field full-field">
+                    <span>YOUR MESSAGE</span>
+                    <textarea
+                        id="messageInput"
+                        maxlength="350"
+                        rows="4"
+                        placeholder="Write something meaningful..."
+                    >May your days be filled with little joys, beautiful memories, and people who make your heart feel at home.</textarea>
+                    <span class="character-count" id="characterCount">0 / 350</span>
+                </label>
+
+            </div>
+
+            <div class="form-actions">
+                <button class="control-btn primary-control" id="updateBtn">
+                    Update Greeting <span>✦</span>
+                </button>
+
+                <p id="updateStatus" aria-live="polite"></p>
+            </div>
+        </section>
+
+        <!-- Decorative message -->
+        <section class="closing-note">
+            <span class="closing-icon">✧</span>
+            <p>Small gestures. Lasting memories.</p>
+            <span class="closing-subtitle">
+                Because the little things matter.
+            </span>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <span>MADE WITH <span class="footer-heart">♥</span> AND A LITTLE MAGIC</span>
+        <span>© <span id="year"></span> LITTLE MOMENTS</span>
+    </footer>
+
+    <!-- Celebration effects -->
+    <div class="effects-layer" id="effectsLayer" aria-hidden="true"></div>
+
+</body>
+</html>
